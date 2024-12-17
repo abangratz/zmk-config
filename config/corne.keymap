@@ -1,68 +1,154 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    combos {
+        compatible = "zmk,combos";
 
-                default_layer {
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-// |   `   |   q   |   w   |   f   |   p   |   b   |   |   j   |   l   |   u   |   y   |   ;   | BSPC  |
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-// | NONE  |   a   |   r   | s/MT1 | t/LS  |   g   |   |   m   | n/RS  | e/MT1 |   i   |   o   |   '   |
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-// | NONE  |   z   |   x   |   c   |   d   |   v   |   |   k   |   h   |   ,   |   .   |   \   |   ]   |
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-//                         |TAB/LC |SPC/LG |ESC/LA |   |RET/RA |SPC/RG |CPS/RC |
-//                         +-------+-------+-------+   +-------+-------+-------+
-                        bindings = <
-   &kp TAB  &kp Q   &kp W   &kp F       &kp P       &kp B       &kp J &kp L     &kp U     &kp Y   &kp SEMI &kP BSPC
-   &none    &kp A   &kp R   &lt 1 S     &kp LS(T)   &kp G       &kp M &kp LS(N) &lt 1 E   &kp I   &kp O    &kp APOS
-   &none    &kp Z   &kp X   &kp C       &kp D       &kp V       &kp K &kp H     &kp COMMA &kp DOT &kp BSLH &kp RBKT
-                            &kp LC(TAB) &kp LG(SPC) &kp LA(ESC) &kp RA(RET) &kp RG(SPC)   &kp RC(TAB)
-                        >;
-                };
-                lower_layer {
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-// | TRANS |   !   |   @   |   /   |   \   |   ~   |   | TRANS |   7   |   8   |   9   | NONE  | TRANS |
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-// | NONE  |   [   |   ]   |   (   | )/LS  | NONE  |   | NONE  | 4/RS  |   5   |   6   | NONE  | NONE  |
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-// | NONE  | NONE  | NONE  | NONE  |   *   | NONE  |   |   0   |   1   |   2   |   3   | NONE  | NONE  |
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-//                         |TAB/LC |SPC/LG |ESC/LA |   |RET/RA |SPC/RG |CPS/RC |
-//                         +-------+-------+-------+   +-------+-------+-------+
-                        bindings = <
-   &trans   &kp EXCL &kp AT   &kp FSLH    &kp BSLH     &kp TILDE     &trans &kp N7     &kp N8    &kp N9  &none &trans
-   &none    &kp LBKT &kp RBKP &lt 1 LPAR  &kp LS(RPAR) &none         &none  &kp LS(N4) &lt 1 N5  &kp N6  &none &none
-   &none    &none    &none    &none       &kp STAR     &none         &kp N0 &kp N1     &kp N2    &kp N3  &none &none
-                              &kp LC(TAB) &kp LG(SPC)  &kp LA(ESC)   &kp RA(RET) &kp RG(SPC) &kp RC(TAB)
-                        >;
-                };
-
-                raise_layer {
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-// | TRANS |   !   |   @   |   /   |   \   |   ~   |   | TRANS |   7   |   8   |   9   | NONE  | TRANS |
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-// | NONE  |   [   |   ]   |   (   | )/LS  | NONE  |   | NONE  | 4/RS  |   5   |   6   | NONE  | NONE  |
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-// | NONE  | NONE  | NONE  | NONE  |   *   | NONE  |   |   0   |   1   |   2   |   3   | NONE  | NONE  |
-// +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-//                         |TAB/LC |SPC/LG |ESC/LA |   |RET/RA |SPC/RG |CPS/RC |
-//                         +-------+-------+-------+   +-------+-------+-------+
-                        bindings = <
-   &trans   &kp EXCL &kp AT   &kp FSLH    &kp BSLH     &kp TILDE     &trans &kp N7     &kp N8    &kp N9  &none &trans
-   &none    &kp LBKT &kp RBKP &lt 1 LPAR  &kp LS(RPAR) &none         &none  &kp LS(N4) &lt 1 N5  &kp N6  &none &none
-   &none    &none    &none    &none       &kp STAR     &none         &kp N0 &kp N1     &kp N2    &kp N3  &none &none
-                              &kp LC(TAB) &kp LG(SPC)  &kp LA(ESC)   &kp RA(RET) &kp RG(SPC) &kp RC(TAB)
-                        >;
-                };
+        capsw {
+            bindings = <&caps_word>;
+            key-positions = <16 19>;
         };
+    };
+
+    macros {
+        hashrocket: hashrocket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp EQUAL &kp GT>;
+            label = "HASHROCKET";
+        };
+
+        elixir_pipe: elixir_pipe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp PIPE &kp GT>;
+            label = "ELIXIR_PIPE";
+        };
+
+        left_arrow: left_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp MINUS>;
+            label = "LEFT_ARROW";
+        };
+
+        right_arrow: right_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+            label = "RIGHT_ARROW";
+        };
+
+        dbl_arrow: dbl_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT>;
+            label = "DBL_ARROW";
+        };
+    };
+
+    behaviors {
+        hml: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+        };
+
+        hmr: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // |   `   |   q   |   w   |   f   |   p   |   b   |   |   j   |   l   |   u   |   y   |   ;   | BSPC  |
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // | NONE  | a/LT3 | r/LT2 | s/LT1 | t/LS  |   g   |   |   m   | n/RS  | e/LT1 | i/LT2 | o/LT3 |   '   |
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // | NONE  |   z   |   x   |   c   |   d   |   v   |   |   k   |   h   |   ,   |   .   |   \   |   ]   |
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            //                         |TAB/LC |SPC/LG |ESC/LA |   |RET/RA |SPC/RG |TAB/RC |
+            //                         +-------+-------+-------+   +-------+-------+-------+
+
+            bindings = <
+&kp TAB  &kp Q    &kp W    &kp F        &kp P         &kp B          &kp J        &kp L         &kp U        &kp Y    &kp SEMI  &kp BSPC
+&none    &lt 3 A  &lt 2 R  &lt 1 S      &hml LSHFT T  &kp G          &kp M        &hmr LSHFT N  &lt 1 E      &lt 2 I  &lt 3 O   &kp APOS
+&none    &kp Z    &kp X    &kp C        &kp D         &kp V          &kp K        &kp H         &kp COMMA    &kp DOT  &kp BSLH  &kp RBKT
+                           &kp LC(TAB)  &kp LG(SPC)   &kp LA(ESC)    &kp RA(RET)  &kp RG(SPC)   &kp RC(TAB)
+            >;
+        };
+
+        lower_layer {
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // | TRANS |   !   |   @   |   /   |   \   |   ~   |   | TRANS |   7   |   8   |   9   | NONE  | TRANS |
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // | NONE  |   [   |   ]   |   (   | )/LS  | NONE  |   | NONE  | 4/RS  |   5   |   6   | NONE  | NONE  |
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // | NONE  | NONE  | NONE  | NONE  |   *   | NONE  |   |   0   |   1   |   2   |   3   | NONE  | NONE  |
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            //                         | TRANS | TRANS | TRANS |   | TRANS | TRANS | TRANS |
+            //                         +-------+-------+-------+   +-------+-------+-------+
+
+            bindings = <
+&trans  &kp EXCL  &kp AT    &kp FSLH    &kp BSLH         &kp TILDE    &trans  &kp N7         &kp N8    &kp N9  &none    &trans
+&none   &kp LBKT  &kp RBKT  &lt 1 LPAR  &hml LSHFT RPAR  &none        &none   &hmr LSHFT N4  &lt 1 N5  &kp N6  &none    &none
+&none   &none     &none     &none       &kp STAR         &none        &kp N0  &kp N1         &kp N2    &kp N3  &kp DOT  &none
+                            &trans      &trans           &trans       &trans  &trans         &trans
+            >;
+        };
+
+        raise_layer {
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // | TRANS | NONE  |  <=>  |   -   |   =   | TRANS |   | PGUP  | HOME  |   UP  |  END  | NONE  | TRANS |
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // | NONE  |  |>   |  <-   |  ->   |   =>  | NONE  |   | NONE  | LEFT  | DOWN  | RIGHT |  DEL  | NONE  |
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // | NONE  | NONE  | NONE  | NONE  | NONE  | NONE  |   | PGDN  | NONE  | NONE  | NONE  | NONE  | NONE  |
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            //                         | TRANS | TRANS | TRANS |   | TRANS | TRANS | TRANS |
+            //                         +-------+-------+-------+   +-------+-------+-------+
+
+            bindings = <
+&trans  &none         &hashrocket  &kp MINUS     &kp EQUAL   &trans    &kp PG_UP  &kp HOME      &kp UP    &kp END    &none    &trans
+&none   &elixir_pipe  &left_arrow  &right_arrow  &dbl_arrow  &none     &none      &kp LEFT      &kp DOWN  &kp RIGHT  &kp DEL  &none
+&none   &none         &none        &none         &none       &none     &kp PG_DN  &none         &none     &none      &none    &none
+                                   &trans        &trans      &trans    &trans     &trans        &trans
+            >;
+        };
+
+        adjust_layer {
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // | TRANS |  F1   |  F2   |  F3   |  F4   | BOOTL |   | BOOTL |balance| DT 7  | DT 8  | DT 9  | ep tog|
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // |sys_res|  F5   |  F6   |  F7   |  F8   | TRANS |   | TRANS |  bsp  | DT 4  | DT 5  | DT 6  |sys_res|
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            // |out_tog|  F9   |  F10  |  F11  |  F12  | TRANS |   | TRANS | DT 0  | DT 1  | DT 2  | DT 3  |out_tog|
+            // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
+            //                         | TRANS | TRANS | TRANS |   | TRANS | TRANS | TRANS |
+            //                         +-------+-------+-------+   +-------+-------+-------+
+
+            bindings = <
+&trans        &kp F1  &kp F2   &kp F3   &kp F4   &bootloader    &bootloader  &kp LC(LG(N0))  &kp LG(LA(N7))  &kp LG(LA(N8))  &kp LG(LA(N9))  &ext_power EP_TOG
+&sys_reset    &kp F5  &kp F6   &kp F7   &kp F8   &trans         &trans       &kp LC(LG(N1))  &kp LG(LA(N4))  &kp LG(LA(N5))  &kp LG(LA(N6))  &sys_reset
+&out OUT_TOG  &kp F9  &kp F10  &kp F11  &kp F12  &trans         &trans       &kp LG(LA(N0))  &kp LG(LA(N1))  &kp LG(LA(N2))  &kp LG(LA(N3))  &out OUT_TOG
+                               &trans   &trans   &trans         &trans       &trans          &trans
+            >;
+        };
+    };
 };

@@ -154,10 +154,10 @@
             //                         +-------+-------+-------+   +-------+-------+-------+
 
             bindings = <
-&trans        &kp F1  &kp F2   &kp F3   &kp F4   &bootloader    &kp LC(LG(N0))  &kp LG(LA(N7))  &kp LG(LA(N8))  &kp LG(LA(N9))  &none  &ext_power EP_TOG
-&sys_reset    &kp F5  &kp F6   &kp F7   &kp F8   &trans         &kp LC(LG(N1))  &kp LG(LA(N4))  &kp LG(LA(N5))  &kp LG(LA(N6))  &none  &sys_reset
-&out OUT_TOG  &kp F9  &kp F10  &kp F11  &kp F12  &trans         &kp LG(LA(N0))  &kp LG(LA(N1))  &kp LG(LA(N2))  &kp LG(LA(N3))  &none  &out OUT_TOG
-                               &trans   &trans   &trans         &trans          &trans          &trans
+&studio_unlock  &kp F1  &kp F2   &kp F3   &kp F4   &bootloader    &kp LC(LG(N0))  &kp LG(LA(N7))  &kp LG(LA(N8))  &kp LG(LA(N9))  &none  &ext_power EP_TOG
+&sys_reset      &kp F5  &kp F6   &kp F7   &kp F8   &trans         &kp LC(LG(N1))  &kp LG(LA(N4))  &kp LG(LA(N5))  &kp LG(LA(N6))  &none  &sys_reset
+&out OUT_TOG    &kp F9  &kp F10  &kp F11  &kp F12  &trans         &kp LG(LA(N0))  &kp LG(LA(N1))  &kp LG(LA(N2))  &kp LG(LA(N3))  &none  &out OUT_TOG
+                                 &trans   &trans   &trans         &trans          &trans          &trans
             >;
         };
 

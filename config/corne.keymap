@@ -87,10 +87,10 @@
             //                         +-------+-------+-------+   +-------+-------+-------+
 
             bindings = <
-&kp TAB  &kp Q    &kp W    &kp F        &kp P         &kp B          &kp J        &kp L         &kp U        &kp Y    &kp SEMI  &kp BSPC
-&none    &lt 3 A  &lt 2 R  &lt 1 S      &hml LSHFT T  &lt 4 G        &lt 4 M      &hmr LSHFT N  &lt 1 E      &lt 2 I  &lt 3 O   &kp APOS
-&none    &kp Z    &kp X    &kp C        &kp D         &kp V          &kp K        &kp H         &kp COMMA    &kp DOT  &kp BSLH  &kp RBKT
-                           &kp LC(TAB)  &kp LG(SPC)   &kp LA(ESC)    &kp RA(RET)  &kp RG(SPC)   &kp RC(TAB)
+&kp TAB  &kp Q    &kp W    &kp F          &kp P           &kp B              &kp J           &kp L           &kp U           &kp Y    &kp SEMI  &kp BSPC
+&none    &lt 3 A  &lt 2 R  &lt 1 S        &hml LSHFT T    &lt 4 G            &lt 4 M         &hmr LSHFT N    &lt 1 E         &lt 2 I  &lt 3 O   &kp APOS
+&none    &kp Z    &kp X    &kp C          &kp D           &kp V              &kp K           &kp H           &kp COMMA       &kp DOT  &kp BSLH  &kp RBKT
+                           &mt LCTRL TAB  &mt LGUI SPACE  &mt LALT ESCAPE    &mt RALT ENTER  &mt RGUI SPACE  &mt RCTRL CAPS
             >;
         };
 
@@ -161,6 +161,7 @@
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
             //                         | TRANS | TRANS | TRANS |   | TRANS | TRANS | TRANS |
             //                         +-------+-------+-------+   +-------+-------+-------+
+
             bindings = <
 &trans        &kp F1  &kp F2   &kp F3   &kp F4   &bootloader    &bootloader  &kp LC(LG(N0))  &kp LG(LS(N7))  &kp LG(LS(N8))  &kp LG(LS(N9))  &ext_power EP_TOG
 &sys_reset    &kp F5  &kp F6   &kp F7   &kp F8   &trans         &trans       &kp LC(LG(N1))  &kp LG(LS(N4))  &kp LG(LS(N5))  &kp LG(LS(N6))  &sys_reset

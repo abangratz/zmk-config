@@ -90,7 +90,7 @@
 &kp TAB  &kp Q    &kp W    &kp F          &kp P           &kp B              &kp J           &kp L           &kp U           &kp Y    &kp SEMI  &kp BSPC
 &none    &lt 3 A  &lt 2 R  &lt 1 S        &hml LSHFT T    &lt 4 G            &lt 4 M         &hmr LSHFT N    &lt 1 E         &lt 2 I  &lt 3 O   &kp APOS
 &none    &kp Z    &kp X    &kp C          &kp D           &kp V              &kp K           &kp H           &kp COMMA       &kp DOT  &kp BSLH  &kp RBKT
-                           &hml LCTRL TAB  &hml LGUI SPACE  &hml LALT ESCAPE    &hmr RALT ENTER  &hmr RGUI SPACE  &hmr RCTRL CAPS
+                           &hml LCTRL TAB  &hml LGUI SPACE  &hml LALT ESCAPE    &hmr RALT ENTER  &hmr RGUI SPACE  &kp RCTRL
             >;
         };
 

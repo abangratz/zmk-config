@@ -116,9 +116,9 @@
             //                         +-------+-------+-------+   +-------+-------+-------+
 
             bindings = <
-&trans  &kp EXCL  &kp AT    &kp FSLH    &kp BSLH         &kp TILDE    &trans  &kp N7         &kp N8    &kp N9  &none    &trans
-&none   &kp LBKT  &kp RBKT  &lt 1 LPAR  &hml LSHFT RPAR  &none        &none   &hmr LSHFT N4  &lt 1 N5  &kp N6  &none    &none
-&none   &none     &none     &none       &kp STAR         &none        &kp N0  &kp N1         &kp N2    &kp N3  &kp DOT  &none
+&trans  &kp EXCL  &kp AT    &kp FSLH    &kp BSLH         &kp TILDE    &trans  &kp N7         &kp N8    &kp N9  &kp KP_SUBTRACT  &trans
+&none   &kp LBKT  &kp RBKT  &lt 1 LPAR  &hml LSHFT RPAR  &kp PLUS     &none   &hmr LSHFT N4  &lt 1 N5  &kp N6  &kp KP_PLUS      &none
+&none   &none     &none     &none       &kp STAR         &kp MINUS    &kp N0  &kp N1         &kp N2    &kp N3  &kp DOT          &none
                             &trans      &trans           &trans       &trans  &trans         &trans
             >;
         };
@@ -136,8 +136,8 @@
 
             bindings = <
 &trans  &none         &hashrocket  &kp MINUS     &kp EQUAL   &trans    &kp PG_UP  &kp HOME  &kp UP    &kp END    &none    &trans
-&none   &elixir_pipe  &left_arrow  &right_arrow  &dbl_arrow  &none     &none      &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &none
-&none   &none         &none        &none         &none       &none     &kp PG_DN  &none     &none     &none      &none    &none
+&none   &elixir_pipe  &left_arrow  &right_arrow  &dbl_arrow  &trans    &none      &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &none
+&none   &none         &none        &none         &none       &trans    &kp PG_DN  &none     &none     &none      &none    &none
                                    &trans        &trans      &trans    &trans     &trans    &trans
             >;
         };

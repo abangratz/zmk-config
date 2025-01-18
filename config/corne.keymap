@@ -125,20 +125,20 @@
 
         lower_layer {
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-            // | TRANS |   !   |   @   |   /   |   \   |   ~   |   | TRANS |   7   |   8   |   9   | NONE  | TRANS |
+            // | TRANS |   !   |   @   |   /   |   \   |   ~   |   |   (   |   7   |   8   |   9   | NONE  | TRANS |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-            // | NONE  |   [   |   ]   |   (   | )/LS  | NONE  |   | NONE  | 4/RS  |   5   |   6   | NONE  | NONE  |
+            // | NONE  |   [   |   ]   | MO 1  | LShift|   +   |   |   )   | 4/RS  |   5   |   6   | NONE  | NONE  |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-            // | NONE  | NONE  | NONE  | NONE  |   *   | NONE  |   |   0   |   1   |   2   |   3   | NONE  | NONE  |
+            // | NONE  | NONE  | NONE  |   _   |   *   |   -   |   |   0   |   1   |   2   |   3   | NONE  | NONE  |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
             //                         | TRANS | TRANS | TRANS |   | TRANS | TRANS | TRANS |
             //                         +-------+-------+-------+   +-------+-------+-------+
 
             bindings = <
-&trans  &kp EXCL  &kp AT    &kp FSLH    &kp BSLH         &kp TILDE    &kp LPAR  &kp N7         &kp N8    &kp N9  &kp KP_SUBTRACT  &trans
-&none   &kp LBKT  &kp RBKT  &mo 1       &kp LSHFT        &kp PLUS     &kp RPAR  &hmr LSHFT N4  &lt 1 N5  &kp N6  &kp KP_PLUS      &none
-&none   &none     &none     &kp UNDER   &kp STAR         &kp MINUS    &kp N0  &kp N1         &kp N2    &kp N3  &kp DOT          &none
-                            &trans      &trans           &trans       &trans  &trans         &trans
+&trans  &kp EXCL  &kp AT    &kp FSLH   &kp BSLH   &kp TILDE    &kp LPAR  &kp N7         &kp N8    &kp N9  &kp KP_SUBTRACT  &trans
+&none   &kp LBKT  &kp RBKT  &mo 1      &kp LSHFT  &kp PLUS     &kp RPAR  &hmr LSHFT N4  &lt 1 N5  &kp N6  &kp KP_PLUS      &none
+&none   &none     &none     &kp UNDER  &kp STAR   &kp MINUS    &kp N0    &kp N1         &kp N2    &kp N3  &kp DOT          &none
+                            &trans     &trans     &trans       &trans    &trans         &trans
             >;
         };
 
@@ -146,9 +146,9 @@
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
             // | TRANS | NONE  |  <=>  |   -   |   =   | TRANS |   | PGUP  | HOME  |   UP  |  END  | NONE  | TRANS |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-            // | NONE  |  |>   |  <-   |  ->   |   =>  | NONE  |   | NONE  | LEFT  | DOWN  | RIGHT |  DEL  | NONE  |
+            // | NONE  |  |>   |  <-   |  ->   |   =>  | TRANS |   | NONE  | LEFT  | DOWN  | RIGHT |  DEL  | NONE  |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-            // | NONE  | NONE  | NONE  | NONE  | NONE  | NONE  |   | PGDN  | NONE  | NONE  | NONE  | NONE  | NONE  |
+            // | NONE  | NONE  | NONE  | NONE  | NONE  | TRANS |   | PGDN  | NONE  | NONE  | NONE  | NONE  | NONE  |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
             //                         | TRANS | TRANS | TRANS |   | TRANS | TRANS | TRANS |
             //                         +-------+-------+-------+   +-------+-------+-------+
@@ -182,11 +182,11 @@
 
         desktop_layer {
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-            // | TRANS |  F1   |  F2   |  F3   |  F4   | BOOTL |   | BOOTL |balance| TDT7  | TDT8  | TDT9  | ep tog|
+            // | TRANS |  F1   |  F2   |  F3   |  F4   | NONE  |   |balance| TDT7  | TDT8  | TDT9  | NONE  | NONE  |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-            // |sys_res|  F5   |  F6   |  F7   |  F8   | TRANS |   | TRANS |  bsp  | TDT4  | TDT5  | TDT6  |sys_res|
+            // | NONE  |  F5   |  F6   |  F7   |  F8   | TRANS |   |  bsp  | TDT4  | TDT5  | TDT6  | NONE  | NONE  |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-            // |out_tog|  F9   |  F10  |  F11  |  F12  | TRANS |   | TRANS | TDT0  | TDT1  | TDT2  | TDT3  |out_tog|
+            // | NONE  |  F9   |  F10  |  F11  |  F12  | TRANS |   | TDT0  | TDT1  | TDT2  | TDT3  | NONE  | NONE  |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
             //                         | TRANS | TRANS | TRANS |   | TRANS | TRANS | TRANS |
             //                         +-------+-------+-------+   +-------+-------+-------+

@@ -125,9 +125,9 @@
 
         lower_layer {
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-            // | TRANS |   !   |   @   |   /   |   \   |   ~   |   |   (   |   7   |   8   |   9   | NONE  | TRANS |
+            // | TRANS |   !   |   @   |   /   |   \   |   ~   |   |   )   |   7   |   8   |   9   | NONE  | TRANS |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
-            // | NONE  |   [   |   ]   | MO 1  | LShift|   +   |   |   )   | 4/RS  |   5   |   6   | NONE  | NONE  |
+            // | NONE  |   [   |   ]   | MO 1  | LShift|   +   |   |   (   | 4/RS  |   5   |   6   | NONE  | NONE  |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
             // | NONE  | NONE  | NONE  |   _   |   *   |   -   |   |   0   |   1   |   2   |   3   | NONE  | NONE  |
             // +-------+-------+-------+-------+-------+-------+   +-------+-------+-------+-------+-------+-------+
@@ -135,8 +135,8 @@
             //                         +-------+-------+-------+   +-------+-------+-------+
 
             bindings = <
-&trans  &kp EXCL  &kp AT    &kp FSLH   &kp BSLH   &kp TILDE    &kp LPAR  &kp N7         &kp N8    &kp N9  &kp KP_SUBTRACT  &trans
-&none   &kp LBKT  &kp RBKT  &mo 1      &kp LSHFT  &kp PLUS     &kp RPAR  &hmr LSHFT N4  &lt 1 N5  &kp N6  &kp KP_PLUS      &none
+&trans  &kp EXCL  &kp AT    &kp FSLH   &kp BSLH   &kp TILDE    &kp RPAR  &kp N7         &kp N8    &kp N9  &kp KP_SUBTRACT  &trans
+&none   &kp LBKT  &kp RBKT  &mo 1      &kp LSHFT  &kp PLUS     &kp LPAR  &hmr LSHFT N4  &lt 1 N5  &kp N6  &kp KP_PLUS      &none
 &none   &none     &none     &kp UNDER  &kp STAR   &kp MINUS    &kp N0    &kp N1         &kp N2    &kp N3  &kp DOT          &none
                             &trans     &trans     &trans       &trans    &trans         &trans
             >;

@@ -24,32 +24,32 @@
 
         bt_down {
             bindings = <&bt BT_PRV>;
-            key-positions = <10 11>;
+            key-positions = <24 11>;
         };
 
         bt_up {
             bindings = <&bt BT_NXT>;
-            key-positions = <22 23>;
+            key-positions = <24 23>;
         };
 
         bt_clear_current_profile {
             bindings = <&bt BT_CLR>;
-            key-positions = <0 1>;
+            key-positions = <24 10>;
         };
 
         bt_clear_all_profiles {
             bindings = <&bt BT_CLR_ALL>;
-            key-positions = <24 25>;
+            key-positions = <24 22>;
         };
 
         out_toggle {
             bindings = <&out OUT_TOG>;
-            key-positions = <35 34>;
+            key-positions = <24 34>;
         };
 
         sys_rst {
             bindings = <&sys_reset>;
-            key-positions = <12 13>;
+            key-positions = <24 5>;
         };
     };
 
